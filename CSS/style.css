@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+/*################ HEADER ####################*/
+
+.container{
+    width: 100%;
+}
+
+header{
+    height: 100px;
+    /* background-color: #ccc; */
+}
+
+.container-menu > .nav{
+    line-height: 100px;
+    text-align: right;
+}
+
+.img-logo{
+    height: 100px;
+}
+.container-menu li{
+    margin-left: 35px;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+/*################ SECTION BG-IMG-PALESTRA -- Imagem de apresentação no inicio do site ####################*/
+
+.bg-image > img{
+    width: 100%;
+    border: 15px solid #263147;
+    border-radius: 15px;
+}
+
+/*################ LINE_DIVISION => Estilização das linhas de divisão que separa cada seção ####################*/
+
+.line-division{
+    position: relative;
+}
+.line-division > .line{
+    width: 100%;
+    border-top: 3px solid #263147;
+}
+
+.line-division > h2{
+    font-size: 26px;
+    position: absolute;
+    top: -18px;
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*################ SECTION PALESTRAS -- Seção de palestras do site ####################*/
+
+
+
+
+
+
+
+
+
