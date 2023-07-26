@@ -5,11 +5,17 @@
     font-family: 'Kanit', sans-serif;
 }
 
+html,body{
+    overflow-x: hidden;
+}
 
 /*################ HEADER ####################*/
 
-.container{
+.container-site{
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2%;
 }
 
 header{
@@ -17,7 +23,8 @@ header{
     /* background-color: #ccc; */
 }
 
-.container-menu > .nav{
+/* ##########  MENU DESKTOP ######### */
+.container-menu-desktop > .nav{
     line-height: 100px;
     text-align: right;
 }
@@ -25,10 +32,112 @@ header{
 .img-logo{
     height: 100px;
 }
-.container-menu li{
+.container-menu-desktop li{
     margin-left: 35px;
     font-weight: 400;
     font-size: 17px;
+}
+
+/* ##########  MENU MOBILE ######### */
+.container-menu-mobile{
+   display: none;
+}
+
+.icon-menu-content{
+    position: relative;
+    top: -80px;
+    right: 10px;
+    float: right;
+}
+
+.icon-menu {
+    --gap: 8px;
+    --height-bar: 2.5px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: .5rem;
+    background-color: #263147;
+  }
+  
+  .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+  }
+  
+  .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+  }
+  
+  .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu > .bar--1 {
+    transition: top 200ms, transform 200ms 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu > .bar--3 {
+    transition: bottom 200ms, transform 200ms 100ms;
+  }
+  
+  .check-icon:checked + .icon-menu {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+  }
+  /* FIM ICON-MENU */
+  
+.container-menu-mobile ul{
+    display: none;
+    text-align: center;
+    background-color: #263147;
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-menu-mobile li{
+    padding: 10px 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.container-menu-mobile li , .container-menu-desktop li a{
+    text-decoration: none;
+    color: #263147;
+}
+
+@media screen and (max-width: 768px){
+    .container-menu-desktop{
+        display: none;
+    }
+
+    .container-menu-mobile{
+        display: block;
+    }
 }
 
 /*################ SECTION BG-IMG-PALESTRA -- Imagem de apresentação no inicio do site ####################*/
@@ -50,6 +159,7 @@ header{
 }
 
 .line-division > h2{
+    text-align: center;
     font-size: 26px;
     position: absolute;
     top: -18px;
@@ -60,6 +170,27 @@ header{
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 400px){
+    
+    .quem-somos .line-division > h2{
+        width: 64%;
+    }
+}
+
+/*################ SECTION ICON-WHATSAPP-FLUTUANTE -- Icone do Whatsapp flutuante da tela ####################*/
+.icon-whatsapp-flutuante{
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icon-whatsapp.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 84%;
+    right: 3px;
+    z-index: 999;
+}
+
 /*################ SECTION PALESTRAS -- Seção de palestras do site ####################*/
 
 .box-palestras, .box-historico-palestras{
@@ -67,19 +198,23 @@ header{
     flex-wrap: wrap;
 }
 
-.box-palestras-single{
-    width: 22%;
+.box-palestras-single, .historico{
+    width: calc(100% / 4);
     margin: auto;
     padding: 10px;
-    height: 300px;
     position: relative;
+}
+
+.box-palestras-wrapper{
+    padding-top: 95%;
     border-radius: 15px;
     border: 8px solid #263147;
     background-color: #263147;
     box-shadow: 4px 6px 10px #263147;
+    position: relative;
 }
 
-.box-palestras-single > img{
+.box-palestras-wrapper > img{
     position: absolute;
     width: 100%;
     height: 75%;
@@ -87,13 +222,12 @@ header{
     top: 0;
 }
 
-.box-palestras-single > h6{
+.box-palestras-wrapper > h6{
     color: #ffffff;
-    margin-top: 100%;
     font-size: 15px;
 }
 
-.box-palestras-single > p{
+.box-palestras-wrapper > p{
     font-weight: 300;
     font-size: 14px;
     color: #ffffff;
@@ -115,9 +249,41 @@ header{
     margin-left: 4px;
 }
 
+.btn-exibir-historico{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .box-historico-palestras{
     display: none;
 }
+
+@media screen and (max-width: 1050px){
+    .box-palestras-single{
+        width: calc(100% / 3);
+    }
+}
+@media screen and (max-width: 850px){
+    .box-palestras-single{
+        width: calc(90% / 2);
+    }
+}
+@media screen and (max-width: 650px){
+    .box-palestras-single{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 580px){
+    .box-palestras-single{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 480px){
+    .box-palestras-single{
+        width: 80%;
+    }
+}
+
 
 /*################ SECTION PALESTRANTES -- Seção de perfil de Palestrantes ####################*/
 
@@ -131,15 +297,21 @@ header{
     margin: auto;
     margin-top: 8px;
     padding: 10px;
-    height: 380px;
     position: relative;
+    width: calc(70% / 2);
+    cursor: pointer;
+}
+
+.box-palestrantes-wrapper{
+    position: relative;
+    padding-top: 100%;
     border-radius: 15px;
     border: 8px solid #263147;
     background-color: #263147;
     box-shadow: 4px 6px 10px #263147;
 }
 
-.box-palestrantes-single > img{
+.box-palestrantes-wrapper > img{
     position: absolute;
     width: 101%;
     height: 90%;
@@ -147,9 +319,8 @@ header{
     top: 0;
 }
 
-.box-palestrantes-single > h6{
+.box-palestrantes-wrapper > h6{
     color: #ffffff;
-    margin-top: 110%;
     font-size: 17px;
 }
 
@@ -157,9 +328,80 @@ header{
     font-family: 'Lusitana', serif;
 }
 
+.box-modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(38, 49, 71, 0.6);
+}
+
+.palestrante-modal{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto;
+    background-color: #ccc;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px 4px #8EFF84;
+    position: relative;
+}
+
+.icon-fechar-janela{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #263147;
+    cursor: pointer;
+}
+
+.icon-fechar-janela i{
+    line-height: 30px;
+}
+
+.palestrante-modal .container-palestrante > img{
+    margin: 0 auto;
+}
+.palestrante-modal .container-palestrante > p{
+    text-align: justify;
+    font-weight: 300;
+}
+.palestrante-modal .container-palestrante > h6{
+    font-size: 18px;
+    font-weight:400;
+}
+
+.palestrante-modal > .container-palestrante{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+@media screen and (max-width: 1000px){
+
+    .box-palestrantes-single{
+        width: calc(100% / 2);
+    }
+}
+@media screen and (max-width: 580px){
+
+    .box-palestrantes-single{
+        width: calc(80% / 1);
+    }
+}
+
 /*################ SECTION QUEM SOMOS ####################*/
 
 section.quem-somos p{
+    padding: 0 2%;
     width: 100%;
     max-width: 700px;
     color: #263147;
@@ -167,6 +409,144 @@ section.quem-somos p{
     margin: 0 auto;
     margin-top: 25px;
 }
+
+/*################ SECTION CONTATO ####################*/
+
+.numero-whats{
+    margin-top: 20px;
+    padding-left: 14%;
+}
+
+.numero-whats img, .numero-whats p{
+    display: inline-block;
+}
+
+.numero-whats img{
+    width: 35px;
+    height: 35px;
+}
+
+.numero-whats p{
+    vertical-align:text-top;
+    margin-left: 5px;
+    font-size: 17px;
+    color: #263147;
+}
+
+.numero-whats a{
+    position: relative;
+    display: block;
+    padding-left: 4%;
+    top: -5px;
+    font-size: 15px;
+}
+
+.email{
+    padding-left: 15%;
+    margin-top: 20px;
+    color: #263147;
+}
+
+.email i, .email p{
+    display: inline-block;
+}
+
+.email i{
+    font-size: 20px;
+}
+
+.email p{
+    position: relative;
+    margin-left: 5px;
+    top: -3px;
+}
+
+/* ################### FOOTER (RODAPÉ DO SITE) #################### */
+
+.informations-and-social{
+    background-color: #263147;
+    color: #ffffff;
+    padding: 30px 10px;
+}
+
+.informations-and-social h6, .informations-and-social p{
+    display: inline-block;
+}
+
+.informations-and-social h6{
+    margin-top: 10px;
+    font-size: 15px;
+    vertical-align: text-bottom;
+}
+
+.informations-and-social p{
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 5%;
+}
+
+.social{
+    text-align: right;
+    position: relative;
+}
+
+.social a{
+    margin: 0 5px;
+    padding-top: 15px;
+}
+
+.social a img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.direitos-autorais{
+    padding: 15px 0;
+}
+
+.direitos-autorais > .container{
+    position: relative;
+}
+
+.direitos-autorais h6{
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+
+.direitos-autorais p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.direitos-autorais p span{
+    color: #11FF62;
+}
+
+@media screen and (max-width: 790px){
+    
+    .direitos-autorais h6{
+        text-align: left;
+    }
+}
+@media screen and (max-width: 460px){
+    
+    .direitos-autorais h6{
+        text-align: center;
+    }
+    .direitos-autorais p{
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
 
 
 
