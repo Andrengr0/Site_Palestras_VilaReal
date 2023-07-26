@@ -62,9 +62,111 @@ header{
 
 /*################ SECTION PALESTRAS -- Seção de palestras do site ####################*/
 
+.box-palestras, .box-historico-palestras{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.box-palestras-single{
+    width: 22%;
+    margin: auto;
+    padding: 10px;
+    height: 300px;
+    position: relative;
+    border-radius: 15px;
+    border: 8px solid #263147;
+    background-color: #263147;
+    box-shadow: 4px 6px 10px #263147;
+}
 
+.box-palestras-single > img{
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    left: 0;
+    top: 0;
+}
 
+.box-palestras-single > h6{
+    color: #ffffff;
+    margin-top: 100%;
+    font-size: 15px;
+}
+
+.box-palestras-single > p{
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 0;
+    top: -10px;
+}
+
+.historico h3{
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 25px;
+    color: #263147;
+}
+
+.historico h3 > i{
+    vertical-align: bottom;
+    margin-left: 4px;
+}
+
+.box-historico-palestras{
+    display: none;
+}
+
+/*################ SECTION PALESTRANTES -- Seção de perfil de Palestrantes ####################*/
+
+.box-palestrantes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-palestrantes-single{
+    width: 30%;
+    margin: auto;
+    margin-top: 8px;
+    padding: 10px;
+    height: 380px;
+    position: relative;
+    border-radius: 15px;
+    border: 8px solid #263147;
+    background-color: #263147;
+    box-shadow: 4px 6px 10px #263147;
+}
+
+.box-palestrantes-single > img{
+    position: absolute;
+    width: 101%;
+    height: 90%;
+    left: 0;
+    top: 0;
+}
+
+.box-palestrantes-single > h6{
+    color: #ffffff;
+    margin-top: 110%;
+    font-size: 17px;
+}
+
+.palestrantes h5{
+    font-family: 'Lusitana', serif;
+}
+
+/*################ SECTION QUEM SOMOS ####################*/
+
+section.quem-somos p{
+    width: 100%;
+    max-width: 700px;
+    color: #263147;
+    text-align: justify;
+    margin: 0 auto;
+    margin-top: 25px;
+}
 
 
 
