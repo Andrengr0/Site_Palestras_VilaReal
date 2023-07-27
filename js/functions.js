@@ -25,7 +25,7 @@ $(()=>{
         $('.box-modal').css('height',altura+'px')
     })
 
-    var offSetPalestrantes = $('.palestrantes').offset().top;
+    var offSetPalestrantes = ($('.palestrantes').offset().top)+100;
     $(function(){
         $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
     })
