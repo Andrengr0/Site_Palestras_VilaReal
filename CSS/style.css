@@ -203,11 +203,20 @@ header{
     flex-wrap: wrap;
 }
 
-.box-palestras-single, .historico{
+.box-palestras > a{
     width: calc(100% / 4);
+}
+
+.box-palestras-single, .historico{
+    width: 100%;
     margin: auto;
     padding: 10px;
     position: relative;
+    transition: 0.5s;
+}
+
+.box-palestras-single:hover{
+    scale: 1.1;
 }
 
 .box-palestras-wrapper{
