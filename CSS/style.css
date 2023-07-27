@@ -37,6 +37,9 @@ header{
     font-weight: 400;
     font-size: 17px;
 }
+.container-menu-desktop li a{
+    color: #263147;
+}
 
 /* ##########  MENU MOBILE ######### */
 .container-menu-mobile{
@@ -125,9 +128,11 @@ header{
     border-bottom: 1px solid #ffffff;
 }
 
-.container-menu-mobile li , .container-menu-desktop li a{
+.container-menu-mobile li a, .container-menu-desktop li a{
     text-decoration: none;
-    color: #263147;
+}
+.container-menu-mobile li a{
+    color: #ffffff;
 }
 
 @media screen and (max-width: 768px){
@@ -335,7 +340,7 @@ header{
     left: 0;
     width: 100%;
     z-index: 3;
-    background-color: rgba(38, 49, 71, 0.6);
+    background-color: rgba(38, 49, 71, 1);
 }
 
 .palestrante-1, .palestrante-2{
