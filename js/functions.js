@@ -22,7 +22,16 @@ $(()=>{
 
     var altura = ($('body').height()) + 5;
     $(function(){
-        $('.box-modal').css('height',altura+'px')})
+        $('.box-modal').css('height',altura+'px')
+    })
+
+    var offSetPalestrantes = $('.palestrantes').offset().top;
+    $(function(){
+        $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
+    })
+
+
+
 
     $(function(){
         abrirJanela();
@@ -30,8 +39,10 @@ $(()=>{
 
         function abrirJanela(){
             $('.box-palestrantes-single').click(function(e){
+                var palestranteID = $(this).attr("id");
                 e.stopPropagation();
-                $('.box-modal').fadeIn();
+                var elementID = $('.palestrante-'+palestranteID)
+                elementID.fadeIn();
             });
         }
     
@@ -39,7 +50,7 @@ $(()=>{
             var el = $('body,.icon-fechar-janela');
     
             el.click(function(){
-                $('.box').fadeOut();
+                $('.palestrante-1, .palestrante-2').fadeOut();
             })
     
             $('.palestrante-modal').click(function(e){

@@ -329,7 +329,7 @@ header{
 }
 
 .box-modal{
-    display: none;
+    padding: 0 3%;
     position: absolute;
     top: 0;
     left: 0;
@@ -338,12 +338,16 @@ header{
     background-color: rgba(38, 49, 71, 0.6);
 }
 
+.palestrante-1, .palestrante-2{
+    display: none;
+}
+
 .palestrante-modal{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     height: auto;
-    background-color: #ccc;
+    background-color: #ffffff;
     text-align: center;
     border-radius: 15px;
     box-shadow: 4px 4px 10px 4px #8EFF84;
@@ -368,6 +372,7 @@ header{
 
 .palestrante-modal .container-palestrante > img{
     margin: 0 auto;
+    width: 100%;
 }
 .palestrante-modal .container-palestrante > p{
     text-align: justify;
