@@ -204,6 +204,7 @@ header{
 }
 
 .box-palestras > a{
+    text-decoration: none;
     width: calc(100% / 4);
 }
 
