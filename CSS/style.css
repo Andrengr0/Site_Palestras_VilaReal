@@ -21,6 +21,7 @@ html,body{
 header{
     height: 100px;
     /* background-color: #ccc; */
+    border-bottom: 3px solid #263147;
 }
 
 /* ##########  MENU DESKTOP ######### */
@@ -204,6 +205,8 @@ header{
 }
 
 .box-palestras > a{
+    margin: 0 auto;
+    text-decoration: none;
     width: calc(100% / 4);
 }
 
@@ -273,27 +276,27 @@ header{
 }
 
 @media screen and (max-width: 1050px){
-    .box-palestras-single{
+    .box-palestras a{
         width: calc(100% / 3);
     }
 }
 @media screen and (max-width: 850px){
-    .box-palestras-single{
+    .box-palestras a{
         width: calc(90% / 2);
     }
 }
 @media screen and (max-width: 650px){
-    .box-palestras-single{
+    .box-palestras a{
         width: 60%;
     }
 }
 @media screen and (max-width: 580px){
-    .box-palestras-single{
+    .box-palestras a{
         width: 70%;
     }
 }
 @media screen and (max-width: 480px){
-    .box-palestras-single{
+    .box-palestras a{
         width: 80%;
     }
 }
@@ -314,6 +317,11 @@ header{
     position: relative;
     width: calc(70% / 2);
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.box-palestrantes-single:hover{
+    scale: 1.1;
 }
 
 .box-palestrantes-wrapper{
