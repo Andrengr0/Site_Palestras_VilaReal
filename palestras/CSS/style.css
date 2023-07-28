@@ -45,6 +45,7 @@ header{
      }
      .nav-item {
         list-style: none;
+        margin-left: 15px;
     }
 
     .bg-image > img{
