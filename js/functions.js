@@ -9,6 +9,37 @@ $(()=>{
         }
     })
 
+    $(window).scroll(function(){
+        var windowOffY = $(window).scrollTop();
+        var windowHeight = $(window).height();
+      
+        // console.log("01"+offSetTop)
+        
+        $('section').each(function(){
+            var elOffY = $(this).offset().top;
+            var elOffContato = $('.contato').offset().top;
+            if(elOffY < windowOffY){
+                $('header a').css('border','0');
+                var target = $(this).attr('target');
+                $('.'+target).css('border-bottom','3px solid #333');
+                return;
+            }else if(windowOffY < windowHeight){
+                $('.id-inicio').css('border-bottom','3px solid #333');
+            }else if(elOffContato < window.pageYOffset){
+                $('header a').css('border','0');
+                $('.id-contato').css('border-bottom','3px solid #333');
+            }
+
+            // if(elOffY + 250 < (windowOffY + windowHeight) && 
+            // elOffY + 250 + $(this).height() > windowOffY)
+            
+            
+            
+        })
+        
+    })
+    
+
     $(function(){
 		$('nav a').click(function(){
 			var href = $(this).attr('href');
