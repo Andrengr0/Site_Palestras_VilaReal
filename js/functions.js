@@ -9,41 +9,52 @@ $(()=>{
         }
     })
 
+
+    $(window).scroll(function(){
+        let windowOffY = $(window).scrollTop();
+        console.log(windowOffY)
+
+        if(windowOffY > 90){
+            $('header').css('display:none');
+            $('header-2').fadeIn();
+        }
+        if(windowOffY < 100){
+            $('header').fadeIn();
+            $('header-2').fadeOut();
+        }
+    })
+    
+
+    $('.id-inicio').css('border-bottom','3px solid #ffffff');
+
     $(window).scroll(function(){
         var windowOffY = $(window).scrollTop();
         var windowHeight = $(window).height();
-      
-        // console.log("01"+offSetTop)
         
         $('section').each(function(){
             var elOffY = $(this).offset().top;
-            var elOffContato = $('.contato').offset().top;
-            if(elOffY < windowOffY){
-                $('header a').css('border','0');
+            var elOffContato = ($('.contato').offset().top)-500;
+            if(elOffY-350 < windowOffY){
+                $('header a, header-2 a').css('border','0');
                 var target = $(this).attr('target');
-                $('.'+target).css('border-bottom','3px solid #333');
+                $('.'+target).css('border-bottom','3px solid #ffffff');
                 return;
             }else if(windowOffY < windowHeight){
-                $('.id-inicio').css('border-bottom','3px solid #333');
-            }else if(elOffContato < window.pageYOffset){
+                $('.id-inicio').css('border-bottom','3px solid #ffffff');
+                $('.id-palestras').css('border','0');
+            }else if(elOffContato < window){
                 $('header a').css('border','0');
-                $('.id-contato').css('border-bottom','3px solid #333');
-            }
-
-            // if(elOffY + 250 < (windowOffY + windowHeight) && 
-            // elOffY + 250 + $(this).height() > windowOffY)
-            
-            
-            
-        })
-        
+                $('.id-contato').css('border-bottom','3px solid #ffffff');
+                $('.id-quem-somos').css('border','0');
+            }   
+        }) 
     })
     
 
     $(function(){
 		$('nav a').click(function(){
 			var href = $(this).attr('href');
-			var offSetTop = ($(href).offset().top)-30;
+			var offSetTop = ($(href).offset().top)-160;
 	
 			$('html,body').animate({'scrollTop':offSetTop});
 	
@@ -60,8 +71,6 @@ $(()=>{
     $(function(){
         $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
     })
-
-
 
 
     $(function(){
