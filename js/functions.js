@@ -9,12 +9,29 @@ $(()=>{
         }
     })
 
+    $('.header-2 > h5').click(function(){
+			var offSetTop = $('#inicio');
+	
+			$('html,body').animate({'scrollTop':offSetTop});
+			return false;
+    })
+
+    $('.bg-img-palestra .container-site .bg-image').slick({
+        centerMode: false,
+        slidesToShow: 1,
+        arrows: false,
+        autoplay: true,
+        dots: true,
+        autoplaySpeed: 2500
+    })
+
 
     $(window).scroll(function(){
+        let windowOffX = $(window).width();
         let windowOffY = $(window).scrollTop();
         console.log(windowOffY)
 
-        if(windowOffY > 90){
+        if(windowOffY > 90 && windowOffX > 768){
             $('header').css('display:none');
             $('header-2').fadeIn();
         }
@@ -34,14 +51,15 @@ $(()=>{
         $('section').each(function(){
             var elOffY = $(this).offset().top;
             var elOffContato = ($('.contato').offset().top)-500;
-            if(elOffY-350 < windowOffY){
+            if(elOffY-350 < windowOffY && windowOffY > windowHeight){
                 $('header a, header-2 a').css('border','0');
                 var target = $(this).attr('target');
                 $('.'+target).css('border-bottom','3px solid #ffffff');
                 return;
-            }else if(windowOffY < windowHeight){
+            }else if(windowOffY <= windowHeight){
                 $('.id-inicio').css('border-bottom','3px solid #ffffff');
                 $('.id-palestras').css('border','0');
+                return;
             }else if(elOffContato < window){
                 $('header a').css('border','0');
                 $('.id-contato').css('border-bottom','3px solid #ffffff');
@@ -57,7 +75,6 @@ $(()=>{
 			var offSetTop = ($(href).offset().top)-160;
 	
 			$('html,body').animate({'scrollTop':offSetTop});
-	
 			return false;
 		})
 	})
