@@ -1,31 +1,19 @@
 $(()=>{
-
+    // Função para exibir ou ocultar menu mobile
     $('.container-menu-mobile').click(function(){
-        
         if($('#check-icon').is(':checked') == true){
             $('.container-menu-mobile > ul').show(300);
         }else{
             $('.container-menu-mobile > ul').hide(300);
         }
     })
-
     $('.header-2 > h5').click(function(){
 			var offSetTop = $('#inicio');
-	
 			$('html,body').animate({'scrollTop':offSetTop});
 			return false;
     })
 
-    $('.bg-img-palestra .container-site .bg-image').slick({
-        centerMode: false,
-        slidesToShow: 1,
-        arrows: false,
-        autoplay: true,
-        dots: true,
-        autoplaySpeed: 2500
-    })
-
-
+    // Função para exibir ou ocultar menu secundário quando a página rola para baixo
     $(window).scroll(function(){
         let windowOffX = $(window).width();
         let windowOffY = $(window).scrollTop();
@@ -41,9 +29,8 @@ $(()=>{
         }
     })
     
-
+    // Funções para dar o efeito hover em cada opção do menu conforme o scroll vai rolando
     $('.id-inicio').css('border-bottom','3px solid #ffffff');
-
     $(window).scroll(function(){
         var windowOffY = $(window).scrollTop();
         var windowHeight = $(window).height();
@@ -67,8 +54,26 @@ $(()=>{
             }   
         }) 
     })
-    
 
+
+    // Função para exibir e ocultar Historico de Palestras
+    $('.btn-exibir-historico').click(function(){
+        $('.box-historico-palestras').slideToggle();
+        if(controler == 0){
+            $('.btn-exibir-historico i').css('transform','rotate(0deg)').css('transition','0.3s');
+            controler = 1;
+        }else{
+            $('.btn-exibir-historico i').css('transform','rotate(90deg)').css('transition','0.3s');
+            controler = 0;
+        }
+    })
+    // Alternativa para colocar efeito do icone "Arrow" do botão exibir historico
+    $('.btn-exibir-historico').click()
+    var controler = 1;
+    $('.btn-exibir-historico i').css('transform','rotate(0deg)')
+
+
+    // Função para rolar a barra até a seção escolhida pelo clique no menu
     $(function(){
 		$('nav a').click(function(){
 			var href = $(this).attr('href');
@@ -79,17 +84,17 @@ $(()=>{
 		})
 	})
 
+    // Definindo posições da janela Modal dos palestrantes
     var altura = ($('body').height()) + 5;
     $(function(){
         $('.box-modal').css('height',altura+'px')
     })
-
-    var offSetPalestrantes = ($('.palestrantes').offset().top)+100;
+    var offSetPalestrantes = ($('.palestrantes').offset().top)-300;
     $(function(){
         $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
     })
 
-
+    // Função para abrir e fechar janela Modal dos palestrantes
     $(function(){
         abrirJanela();
         verificarCliqueFechar();
@@ -105,15 +110,12 @@ $(()=>{
     
         function verificarCliqueFechar(){
             var el = $('body,.icon-fechar-janela');
-    
             el.click(function(){
                 $('.palestrante-1, .palestrante-2').fadeOut();
             })
-    
             $('.palestrante-modal').click(function(e){
                 e.stopPropagation();
             })
         }
     });
-
 })

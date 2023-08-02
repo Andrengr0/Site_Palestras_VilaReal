@@ -21,8 +21,7 @@ html,body{
 header{
     padding: 10px;
     height: 100px;
-    /* background-color: #ccc; */
-    border-bottom: 3px solid #263147;
+    /* border-bottom: 3px solid #263147; */
 }
 
 header-2{
@@ -219,9 +218,10 @@ header-2 h5{
 }
 
 .bg-image .img-single > .img-single-wrapper{
-    width: 100%;
+    width: 99%;
     background-color: #ccc;
-    border: 3px solid #000;
+    border: 10px solid #263147;
+    border-radius: 15px;
     padding-top: 60%;
     background-image: url(../images/background_Luciana_no_palco.jpeg);
     background-position: center;
@@ -316,7 +316,7 @@ li.slick-active button{
     flex-wrap: wrap;
 }
 
-.box-palestras > a{
+.box-palestras > a, .box-historico-palestras > a{
     margin: 0 auto;
     text-decoration: none;
     width: calc(100% / 4);
@@ -354,6 +354,7 @@ li.slick-active button{
 .box-palestras-wrapper > h6{
     color: #ffffff;
     font-size: 15px;
+    text-decoration: none;
 }
 
 .box-palestras-wrapper > p{
@@ -383,32 +384,41 @@ li.slick-active button{
     cursor: pointer;
 }
 
+.check-icon-historico:checked + .icon-arrow-historico{
+    transform: rotate(90deg);
+  }
+
 .box-historico-palestras{
-    display: none;
+    display: flex;
 }
 
+
 @media screen and (max-width: 1050px){
-    .box-palestras a{
+    .box-palestras a, .box-historico-palestras a{
         width: calc(100% / 3);
     }
 }
 @media screen and (max-width: 850px){
-    .box-palestras a{
+    .box-palestras a,
+    .box-historico-palestras a{
         width: calc(90% / 2);
     }
 }
 @media screen and (max-width: 650px){
-    .box-palestras a{
+    .box-palestras a,
+    .box-historico-palestras a{
         width: 60%;
     }
 }
 @media screen and (max-width: 580px){
-    .box-palestras a{
+    .box-palestras a,
+    .box-historico-palestras a{
         width: 70%;
     }
 }
 @media screen and (max-width: 480px){
-    .box-palestras a{
+    .box-palestras a,
+    .box-historico-palestras a{
         width: 80%;
     }
 }
@@ -448,7 +458,7 @@ li.slick-active button{
 .box-palestrantes-wrapper > img{
     position: absolute;
     width: 101%;
-    height: 90%;
+    height: 85%;
     left: 0;
     top: 0;
 }
@@ -456,6 +466,11 @@ li.slick-active button{
 .box-palestrantes-wrapper > h6{
     color: #ffffff;
     font-size: 17px;
+}
+
+.box-palestrantes-wrapper h6 > p{
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 .palestrantes h5{
