@@ -3,9 +3,9 @@ $(()=>{
     $('.container-menu-mobile').click(function(){
         if($('#check-icon').is(':checked') == true){
             $('.container-menu-mobile > ul').show(300);
+	    $('.container-menu-mobile > ul').css('z-index','333');
         }else{
             $('.container-menu-mobile > ul').hide(300);
-	    $('.container-menu-mobile > ul').css('z-index','333');
         }
     })
     $('.header-2 > h5').click(function(){
