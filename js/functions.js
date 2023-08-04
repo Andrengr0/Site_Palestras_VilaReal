@@ -89,7 +89,10 @@ $(()=>{
     $(function(){
         $('.box-modal').css('height',altura+'px')
     })
-    var offSetPalestrantes = ($('.palestrantes').offset().top)-300;
+    var offSetPalestrantes = ($('.palestrantes').offset().top)-800;
+    if($(window).width() < 480){
+        var offSetPalestrantes = ($('.palestrantes').offset().top)-1600;
+    }
     $(function(){
         $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
     })

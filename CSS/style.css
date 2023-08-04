@@ -546,10 +546,46 @@ li.slick-active button{
         width: calc(100% / 2);
     }
 }
+@media screen and (max-width: 768px){
+    .box-palestrantes-wrapper > img{
+        height: 80%;
+    }
+
+    .box-palestrantes-wrapper > h6{
+        margin-top: 15%;
+    }
+}
+
 @media screen and (max-width: 580px){
 
     .box-palestrantes-single{
         width: calc(80% / 1);
+    }
+
+    .box-palestrantes-wrapper > img{
+        height: 85%;
+    }
+
+    .box-palestrantes-wrapper > h6{
+        margin-top: 1%;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .box-palestrantes-wrapper > img{
+        height: 80%;
+    }
+
+    .box-palestrantes-wrapper > h6{
+        margin-top: 15%;
+    }
+}
+
+@media screen and (max-width: 295px){
+
+    .box-palestrantes-wrapper > h6{
+        margin-top: 20%;
     }
 }
 
