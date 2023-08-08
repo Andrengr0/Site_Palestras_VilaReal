@@ -1,6 +1,6 @@
 $(()=>{
     // Sliders das imagem de apresentação na página inicial
-    $('.bg-img-palestra .container-site .bg-image').slick({
+    $('.bg-img-palestra .container-fluid .bg-image').slick({
         centerMode: false,
         infinite: true,
         slidesToShow: 1,

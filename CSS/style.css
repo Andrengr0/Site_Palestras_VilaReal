@@ -219,9 +219,7 @@ header-2 h5{
 
 .bg-image .img-single > .img-single-wrapper{
     width: 99%;
-    background-color: #ccc;
-    border: 10px solid #263147;
-    border-radius: 15px;
+    border-radius: 10px;
     padding-top: 60%;
     background-image: url(../images/background_Luciana_no_palco.jpeg);
     background-position: center;
@@ -288,6 +286,28 @@ li.slick-active button{
     transform: translateX(-50%);
 }
 
+.palestrantes .line-division{
+    position: relative;
+}
+.palestrantes .line-division > .line{
+    width: 100%;
+    border-top: 3px solid #ffffff;
+}
+
+.palestrantes .line-division > h2{
+    color: #ffffff;
+    text-align: center;
+    font-size: 26px;
+    position: absolute;
+    top: -18px;
+    background-color: #263147;
+    padding-left: 20px;
+    padding-right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 @media screen and (max-width: 400px){
     
     .quem-somos .line-division > h2{
@@ -304,7 +324,7 @@ li.slick-active button{
     background-position: center;
     background-size: cover;
     position: fixed;
-    top: 84%;
+    bottom: 1%;
     right: 3px;
     z-index: 999;
 }
@@ -426,6 +446,11 @@ li.slick-active button{
 
 /*################ SECTION PALESTRANTES -- Seção de perfil de Palestrantes ####################*/
 
+.palestrantes{
+    background-color: #263147;
+    padding: 20px 0; 
+}
+
 .box-palestrantes{
     display: flex;
     flex-wrap: wrap;
@@ -451,9 +476,9 @@ li.slick-active button{
     position: relative;
     padding-top: 100%;
     border-radius: 15px;
-    border: 8px solid #263147;
-    background-color: #263147;
-    box-shadow: 4px 6px 10px #263147;
+    border: 8px solid #ffffff;
+    background-color: #ffffff;
+    /* box-shadow: 2px 4px 4px #ffffff; */
 }
 
 .box-palestrantes-wrapper > img{
@@ -465,7 +490,7 @@ li.slick-active button{
 }
 
 .box-palestrantes-wrapper > h6{
-    color: #ffffff;
+    color: #263147;
     font-size: 17px;
 }
 
@@ -475,6 +500,7 @@ li.slick-active button{
 }
 
 .palestrantes h5{
+    color: #ffffff;
     font-family: 'Lusitana', serif;
 }
 
