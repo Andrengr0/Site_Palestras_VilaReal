@@ -798,12 +798,11 @@ section.quem-somos p{
 .caixa__card.cc__5 {
     -webkit-animation-delay: -1s;
     -moz-animation-delay: -1s;
-    background-image: url(../images/Logo\ Pura\ Delícia.jpg
+    background-image: url(../images/Logo\ Pura\ Delícia.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
-
 /* ################### FOOTER (RODAPÉ DO SITE) #################### */
 
 .informations-and-social{
