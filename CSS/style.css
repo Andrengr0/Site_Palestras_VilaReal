@@ -875,7 +875,7 @@ section.quem-somos p{
     padding-top: 15px;
 }
 
-.social a img{
+.social a > img{
     width: 40px;
     height: 40px;
 }
@@ -916,9 +916,6 @@ section.quem-somos p{
     
     .direitos-autorais h6{
         text-align: center;
-    }
-    .direitos-autorais{
-
     }
     .direitos-autorais p{
         position: relative;
