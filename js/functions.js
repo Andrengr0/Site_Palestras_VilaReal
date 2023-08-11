@@ -18,7 +18,6 @@ $(()=>{
     $(window).scroll(function(){
         let windowOffX = $(window).width();
         let windowOffY = $(window).scrollTop();
-        console.log(windowOffY)
 
         if(windowOffY > 90 && windowOffX > 768){
             $('header').css('display:none');
@@ -74,6 +73,20 @@ $(()=>{
     $('.btn-exibir-historico i').css('transform','rotate(0deg)')
 
 
+    //Função para personalizar o slider de palestrantes
+    // var box_palestrantes_single = $(".box-palestrantes-single");
+    // var quantPalestrantes = box_palestrantes_single.length;
+    // // console.log(quantPalestrantes);
+    // var larguraBoxPalestrantes = quantPalestrantes * 30;
+    // if(quantPalestrantes > 1){
+    //     $('.box-palestrantes').css('width', larguraBoxPalestrantes+'%')
+    //     $('.box-palestrantes-single').css('width', (90 / quantPalestrantes)+'%')
+    // }else{
+    //     $('.box-palestrantes').css('width','100%')
+    // }
+    
+
+
     // Função para rolar a barra até a seção escolhida pelo clique no menu
     $(function(){
 		$('nav a').click(function(){
@@ -90,24 +103,26 @@ $(()=>{
     $(function(){
         $('.box-modal').css('height',altura+'px')
     })
-    var offSetPalestrantes = ($('.palestrantes').offset().top)-800;
+    var offSetPalestrantes = ($('.palestrantes').offset().top)-300;
     if($(window).width() < 480){
         var offSetPalestrantes = ($('.palestrantes').offset().top)-1600;
     }
     $(function(){
         $('.palestrante-modal').css('margin-top',offSetPalestrantes+'px')
     })
+        
 
     // Função para abrir e fechar janela Modal dos palestrantes
     $(function(){
         abrirJanela();
         verificarCliqueFechar();
+        var elementID;
 
         function abrirJanela(){
-            $('.box-palestrantes-single').click(function(e){
+            $('.box-palestrantes-single h6').click(function(e){
                 var palestranteID = $(this).attr("id");
                 e.stopPropagation();
-                var elementID = $('.palestrante-'+palestranteID)
+                elementID = $('.palestrante-'+palestranteID)
                 elementID.fadeIn();
             });
         }
@@ -115,7 +130,7 @@ $(()=>{
         function verificarCliqueFechar(){
             var el = $('body,.icon-fechar-janela');
             el.click(function(){
-                $('.palestrante-1, .palestrante-2').fadeOut();
+                elementID.fadeOut();
             })
             $('.palestrante-modal').click(function(e){
                 e.stopPropagation();

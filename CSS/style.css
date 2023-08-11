@@ -446,55 +446,95 @@ li.slick-active button{
 
 /*################ SECTION PALESTRANTES -- Seção de perfil de Palestrantes ####################*/
 
+.pl-1 .box-img-palestrante{
+    background-image: url(../images/img-foto-Luciana.png);
+}
+
+.pl-2 .box-img-palestrante{
+    background-image: url(../images/img-foto-Irisvaldo.png);
+}
+
+.pl-3 .box-img-palestrante{
+    background-image: url(../images/img-foto-Luciana.png);
+}
+
+.pl-4 .box-img-palestrante{
+    background-image: url(../images/img-foto-Irisvaldo.png);
+}
+
+.pl-5 .box-img-palestrante{
+    background-image: url(../images/img-foto-Luciana.png);
+}
+
+.box-img-palestrante{
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 .palestrantes{
     background-color: #263147;
     padding: 20px 0; 
 }
 
-.box-palestrantes{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .box-palestrantes-single{
-    width: 30%;
-    margin: auto;
+    z-index: 999;
     margin-top: 8px;
-    padding: 10px;
+    padding-right: 50px;
     position: relative;
-    width: calc(70% / 2);
-    cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-.box-palestrantes-single img:hover{
-    scale: 1.07;
+.box-palestrantes-single .box-img-palestrante:hover{
+    scale: 1.05;
     transition: 1s;
 }
 
 .box-palestrantes-wrapper{
     position: relative;
-    padding-top: 100%;
-    border-radius: 15px;
+    padding-top: 115%;
+    border-radius: 9px;
     border: 8px solid #ffffff;
     background-color: #ffffff;
     /* box-shadow: 2px 4px 4px #ffffff; */
+    max-width: 400px;
 }
 
-.box-palestrantes-wrapper > img{
+@media screen and (max-width: 1200px){
+    .box-palestrantes-full > .box-img-palestrante{
+        height: 70%;
+    }
+
+    .box-palestrantes-full > h6{
+        padding-bottom: 20px;
+    }
+}
+
+.box-palestrantes-full{
+    width: 100%;
+    height: 100%;
     position: absolute;
-    width: 101%;
+    top: 0;
+    left: 0;
+}
+
+.box-palestrantes-full > .box-img-palestrante{
+    width: 100%;
     height: 85%;
     left: 0;
     top: 0;
+    border-radius: 9px;
 }
 
-.box-palestrantes-wrapper > h6{
+.box-palestrantes-full > h6{
     color: #263147;
     font-size: 17px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding-bottom: 10px;
 }
 
-.box-palestrantes-wrapper h6 > p{
+.box-palestrantes-full h6 > p{
     font-size: 14px;
     margin-top: 8px;
 }
@@ -502,6 +542,45 @@ li.slick-active button{
 .palestrantes h5{
     color: #ffffff;
     font-family: 'Lusitana', serif;
+}
+
+
+
+/* .slick-prev{
+    font-size: 40px;
+    color: #263147;
+    background: transparent;
+    border: 0;
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 43%;
+    z-index: 3;
+    cursor: pointer;
+}
+.slick-prev > div{
+    background-image: url(../images/left-arrow.png);
+} */
+.slick-next > div{
+    background-image: url(../images/right-arrow.png);
+}
+.slick-next{
+    font-size: 40px;
+    color: #ffffff;
+    background: transparent;
+    border: 0;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 43%;
+    cursor: pointer;
+}
+
+.slick-next > div,
+.slick-prev > div{
+    width: 30px;
+    height: 30px;
+    background-size: cover;
 }
 
 .box-modal{
@@ -514,7 +593,11 @@ li.slick-active button{
     background-color: rgba(38, 49, 71, 1);
 }
 
-.palestrante-1, .palestrante-2{
+.palestrante-pl-1, 
+.palestrante-pl-2,
+.palestrante-pl-3,
+.palestrante-pl-4,
+.palestrante-pl-5{
     display: none;
 }
 
@@ -555,6 +638,7 @@ li.slick-active button{
     font-weight: 300;
 }
 .palestrante-modal .container-palestrante > h6{
+    margin-top: 10px;
     font-size: 18px;
     font-weight:400;
 }
@@ -566,54 +650,7 @@ li.slick-active button{
     padding: 2%;
 }
 
-@media screen and (max-width: 1000px){
 
-    .box-palestrantes-single{
-        width: calc(100% / 2);
-    }
-}
-@media screen and (max-width: 768px){
-    .box-palestrantes-wrapper > img{
-        height: 80%;
-    }
-
-    .box-palestrantes-wrapper > h6{
-        margin-top: 15%;
-    }
-}
-
-@media screen and (max-width: 580px){
-
-    .box-palestrantes-single{
-        width: calc(80% / 1);
-    }
-
-    .box-palestrantes-wrapper > img{
-        height: 85%;
-    }
-
-    .box-palestrantes-wrapper > h6{
-        margin-top: 1%;
-    }
-}
-
-@media screen and (max-width: 450px){
-
-    .box-palestrantes-wrapper > img{
-        height: 80%;
-    }
-
-    .box-palestrantes-wrapper > h6{
-        margin-top: 15%;
-    }
-}
-
-@media screen and (max-width: 295px){
-
-    .box-palestrantes-wrapper > h6{
-        margin-top: 20%;
-    }
-}
 
 /*################ SECTION QUEM SOMOS ####################*/
 
