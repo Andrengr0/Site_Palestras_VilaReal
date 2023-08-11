@@ -96,5 +96,17 @@ header{
         margin-top: 10px;
       }   
     
+      .icon-whatsapp-flutuante{
+        width: 20px;
+        height: 20px;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        top: 84%;
+        right: 3px;
+        z-index: 999;
+    }
       
       
