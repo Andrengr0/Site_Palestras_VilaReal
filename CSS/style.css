@@ -57,8 +57,8 @@ header-2 h5{
 
 .container-menu-desktop-fixed li{
     margin-left: 35px;
-    font-weight: 400;
-    font-size: 17px;
+    font-weight: 300;
+    font-size: 15px;
 }
 .container-menu-desktop-fixed li a{
     color: #ffffff;
@@ -80,7 +80,7 @@ header-2 h5{
 
 .container-menu-desktop li{
     margin-left: 35px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 17px;
 }
 .container-menu-desktop .nav-item > a{
