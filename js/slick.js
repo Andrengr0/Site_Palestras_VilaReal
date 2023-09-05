@@ -44,7 +44,7 @@
                 appendDots: $(element),
                 arrows: true,
                 asNavFor: null,
-                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"></button>',
+                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><i class="fa-solid fa-chevron-left"></i></button>',
                 nextArrow: '<button class="slick-next" aria-label="Next" type="button"><i class="fa-solid fa-chevron-right"></i></button>',
                 autoplay: false,
                 autoplaySpeed: 3000,

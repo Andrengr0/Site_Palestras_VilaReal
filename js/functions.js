@@ -113,6 +113,7 @@ $(()=>{
         
 
     // Função para abrir e fechar janela Modal dos palestrantes
+
     $(function(){
         abrirJanela();
         verificarCliqueFechar();

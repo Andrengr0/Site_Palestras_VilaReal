@@ -476,11 +476,15 @@ li.slick-active button{
     background-color: #263147;
     padding: 20px 0; 
 }
+.box-palestrantes{
+    padding: 0 20px;
+}
 
 .box-palestrantes-single{
     z-index: 999;
     margin-top: 8px;
-    padding-right: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
     position: relative;
     transition: 0.3s;
 }
@@ -497,7 +501,7 @@ li.slick-active button{
     border: 8px solid #ffffff;
     background-color: #ffffff;
     /* box-shadow: 2px 4px 4px #ffffff; */
-    max-width: 400px;
+    width: 100%;
 }
 
 @media screen and (max-width: 1200px){
@@ -546,9 +550,9 @@ li.slick-active button{
 
 
 
-/* .slick-prev{
+.slick-prev{
     font-size: 40px;
-    color: #263147;
+    color: #ffffff;
     background: transparent;
     border: 0;
     float: left;
@@ -560,7 +564,9 @@ li.slick-active button{
 }
 .slick-prev > div{
     background-image: url(../images/left-arrow.png);
-} */
+    width: 30px;
+    height: 30px;
+}
 .slick-next > div{
     background-image: url(../images/right-arrow.png);
 }
